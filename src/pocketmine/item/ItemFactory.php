@@ -87,16 +87,6 @@ class ItemFactory{
 		self::registerItem(new AcaciaSign());
 		self::registerItem(new DarkOakSign());
 
-ItemFactory::registerItem(new Item(-2, 0, ''), true);
-ItemFactory::registerItem(new Item(-3, 0, ''), true);
-ItemFactory::registerItem(new Item(-4, 0, ''), true);
-ItemFactory::registerItem(new Item(-5, 0, ''), true);
-ItemFactory::registerItem(new Item(-6, 0, ''), true);
-ItemFactory::registerItem(new Item(-7, 0, ''), true);
-ItemFactory::registerItem(new Item(-8, 0, ''), true);
-ItemFactory::registerItem(new Item(-9, 0, ''), true);
-ItemFactory::registerItem(new Item(-10, 0, ''), true);
-ItemFactory::registerItem(new Item(-11, 0, ''), true);
 ItemFactory::registerItem(new Item(-130, 0, ''), true);
 ItemFactory::registerItem(new Item(-131, 0, ''), true);
 ItemFactory::registerItem(new Item(-132, 0, ''), true);
@@ -170,8 +160,6 @@ ItemFactory::registerItem(new Item(-199, 0, ''), true);
 ItemFactory::registerItem(new Item(-200, 0, ''), true);
 ItemFactory::registerItem(new Item(-201, 0, ''), true);
 ItemFactory::registerItem(new Item(-202, 0, ''), true);
-ItemFactory::registerItem(new Item(-203, 0, ''), true);
-ItemFactory::registerItem(new Item(-204, 0, ''), true);
 ItemFactory::registerItem(new Item(-205, 0, ''), true);
 ItemFactory::registerItem(new Item(-206, 0, ''), true);
 ItemFactory::registerItem(new Item(-207, 0, ''), true);
@@ -179,8 +167,71 @@ ItemFactory::registerItem(new Item(-208, 0, ''), true);
 ItemFactory::registerItem(new Item(-209, 0, ''), true);
 ItemFactory::registerItem(new Item(-210, 0, ''), true);
 ItemFactory::registerItem(new Item(-211, 0, ''), true);
-ItemFactory::registerItem(new Item(-212, 0, ''), true);
-ItemFactory::registerItem(new Item(-213, 0, ''), true);
+
+		ItemFactory::registerItem(new Item(-2, 0, "Prismarine Stairrs"), true);
+		ItemFactory::registerItem(new Item(-3, 0, "Dark Prismarine Stairrs"), true);
+		ItemFactory::registerItem(new Item(-4, 0, "Prismarine Brikcs Stairrs"), true);
+		ItemFactory::registerItem(new Item(-5, 0, "Stripped Spruce Log"), true);
+		ItemFactory::registerItem(new Item(-6, 0, "Stripped Birch Log"), true);
+		ItemFactory::registerItem(new Item(-7, 0, "Stripped Jungle Log"), true);
+		ItemFactory::registerItem(new Item(-8, 0, "Stripped Acacia Log"), true);
+		ItemFactory::registerItem(new Item(-9, 0, "Stripped Dark Oak Log"), true);
+		ItemFactory::registerItem(new Item(-10, 0, "Stripped Oak Log"), true);
+		ItemFactory::registerItem(new Item(-11, 0, "Blue Ice"), true);
+		ItemFactory::registerItem(new Item(-203, 0, "Barrel"), true);
+		ItemFactory::registerItem(new Item(-204, 0, "Loom"), true);
+		ItemFactory::registerItem(new Item(-212, 0, "Wood"), true);
+		ItemFactory::registerItem(new Item(-213, 0, "Composter"), true);
+
+/*	ItemFactory::registerItem(new ItemBlock(257, 0, -2), true);
+		ItemFactory::registerItem(new ItemBlock(258, 0, -3), true);
+		ItemFactory::registerItem(new ItemBlock(259, 0, -4), true);
+		ItemFactory::registerItem(new ItemBlock(260, 0, -5), true);
+		ItemFactory::registerItem(new ItemBlock(261, 0, -6), true);
+		ItemFactory::registerItem(new ItemBlock(262, 0, -7), true);
+		ItemFactory::registerItem(new ItemBlock(263, 0, -8), true);
+		ItemFactory::registerItem(new ItemBlock(264, 0, -9), true);
+		ItemFactory::registerItem(new ItemBlock(265, 0, -10), true);
+		ItemFactory::registerItem(new ItemBlock(266, 0, -11), true); */
+
+		ItemFactory::registerItem(new ItemBlock(458, 0, -203), true);
+		ItemFactory::registerItem(new ItemBlock(458, 0, -203), true);
+		ItemFactory::registerItem(new ItemBlock(459, 0, -204), true);
+		ItemFactory::registerItem(new ItemBlock(467, 0, -212), true);
+		ItemFactory::registerItem(new ItemBlock(468, 0, -213), true);
+		ItemFactory::registerItem(new ItemBlock(393, 0, -138), true);
+		ItemFactory::registerItem(new ItemBlock(392, 0, -137), true);
+		ItemFactory::registerItem(new ItemBlock(391, 0, -136), true);
+		ItemFactory::registerItem(new ItemBlock(390, 0, -135), true);
+		ItemFactory::registerItem(new ItemBlock(389, 0, -134), true);
+		ItemFactory::registerItem(new ItemBlock(388, 0, -133), true);
+		ItemFactory::registerItem(new ItemBlock(387, 0, -132), true);
+		ItemFactory::registerItem(new ItemBlock(386, 0, -131), true);
+		ItemFactory::registerItem(new ItemBlock(385, 0, -130), true);
+
+		ItemFactory::registerItem(new Item(335, 0, "Kelp"), true);
+		ItemFactory::registerItem(new ItemBlock(393, 0, 335), true);
+
+		ItemFactory::registerItem(new ItemBlock(411, 0, -156), true);
+		ItemFactory::registerItem(new ItemBlock(412, 0, -161), true);
+		ItemFactory::registerItem(new ItemBlock(413, 0, -159), true);
+		ItemFactory::registerItem(new ItemBlock(418, 0, -163), true);
+		ItemFactory::registerItem(new ItemBlock(419, 0, -164), true);
+		ItemFactory::registerItem(new ItemBlock(420, 0, -165), true);
+
+		ItemFactory::registerItem(new ItemBlock(461, 0, -206), true);
+		ItemFactory::registerItem(new ItemBlock(464, 0, -200), true);
+		ItemFactory::registerItem(new ItemBlock(455, 0, -201), true);
+		ItemFactory::registerItem(new ItemBlock(456, 0, -201), true);
+		ItemFactory::registerItem(new ItemBlock(457, 0, -200), true);
+		ItemFactory::registerItem(new ItemBlock(451, 0, -196), true);
+		ItemFactory::registerItem(new ItemBlock(452, 0, -195), true);
+		ItemFactory::registerItem(new ItemBlock(453, 0, -198), true);
+		ItemFactory::registerItem(new ItemBlock(450, 0, -195), true);
+		ItemFactory::registerItem(new ItemBlock(462, 0, -207), true);
+		ItemFactory::registerItem(new ItemBlock(462, 0, 477), true);
+
+		ItemFactory::registerItem(new Item(477, 0, 'SWEET_BERRIES'), true);
 
 	/* Element */
 	ItemFactory::registerItem(new Item(-12, 0, ''), true);

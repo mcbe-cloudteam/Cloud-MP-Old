@@ -480,7 +480,7 @@ interface BlockIds{
 	public const LOOM_BLOCK = 459;
 	public const BELL_BLOCK = 461;
 	public const SWEET_BERRY_BUSH = 462;
-	public const LANTERN_BLOCK= 463;
+	public const LANTERN_BLOCK = 463;
 	public const CAMPFIRE_BLOCK = 464;
 	public const LAVA_CAULDRON = 465;
 	public const JIGSAW = 466;

@@ -11,13 +11,41 @@
      Make of Things.
  */
 
-declare(strict_types=1);
+ declare(strict_types=1);
+ namespace pocketmine\block;
+ use pocketmine\block\utils\PillarRotationHelper;
+ use pocketmine\item\Item;
+ use pocketmine\math\Vector3;
+ use pocketmine\Player;
+ class Kelp extends Solid{
 
-namespace pocketmine\block;
-
-use pocketmine\math\AxisAlignedBB;
-use pocketmine\math\Vector3;
-use pocketmine\Player;
-
-class Kelp extends Block{
-}
+ 	protected $id = self::KELP;
+ 	public function __construct(int $meta = 0){
+ 		$this->meta = $meta;
+ 	}
+ 	public function getHardness() : float{
+ 		return 2;
+ 	}
+ 	public function getName() : string{
+ 		return "Kelp";
+ 	}
+ 	public function place(Item $item, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, Player $player = null) : bool{
+ 		$this->meta = PillarRotationHelper::getMetaFromFace($this->meta, $face);
+ 		return $this->getLevel()->setBlock($blockReplace, $this, true, true);
+ 	}
+ 	public function getVariantBitmask() : int{
+ 		return 0x03;
+ 	}
+ 	public function getToolType() : int{
+ 		return BlockToolType::TYPE_SHEARS;
+ 	}
+ 	public function getFuelTime() : int{
+ 		return 10;
+ 	}
+ 	public function getFlameEncouragement() : int{
+ 		return 5;
+ 	}
+ 	public function getFlammability() : int{
+ 		return 5;
+ 	}
+ }

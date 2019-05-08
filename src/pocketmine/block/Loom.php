@@ -21,23 +21,35 @@
 
 declare(strict_types=1);
 
-namespace pocketmine\command;
+namespace pocketmine\block;
 
+use pocketmine\item\TieredTool;
 
-interface CommandExecutor{
+class Loom extends Solid{
 
-	/**
-	 * @param CommandSender $sender
-	 * @param Command       $command
-	 * @param string        $label
-	 * @param string[]      $args
-	 *
-	 * @return bool
-	 */
-	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool;
+	protected $id = self::LOOM_BLOCK;
 
+	public function __construct(int $meta = 0){
+		$this->meta = $meta;
+	}
+
+	public function getHardness() : float{
+		return 4;
+	}
+
+	public function getBlastResistance() : float{
+		return 30;
+	}
+
+	public function getToolType() : int{
+		return BlockToolType::TYPE_PICKAXE;
+	}
+
+	public function getToolHarvestLevel() : int{
+		return TieredTool::TIER_WOODEN;
+	}
+
+	public function getName() : string{
+		return "Loom";
+	}
 }
-
-/*	public function onCommand(CommandSender $sender, Command $command, string $label, array $args);
-
-}*/

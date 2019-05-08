@@ -21,23 +21,18 @@
 
 declare(strict_types=1);
 
-namespace pocketmine\command;
+namespace pocketmine\command\defaults;
 
+use pocketmine\command\CommandSender;
+use pocketmine\lang\TranslationContainer;
+use pocketmine\Player;
 
-interface CommandExecutor{
+class StoreCommand extends VanillaCommand{
 
-	/**
-	 * @param CommandSender $sender
-	 * @param Command       $command
-	 * @param string        $label
-	 * @param string[]      $args
-	 *
-	 * @return bool
-	 */
-	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool;
-
+	public function execute(CommandSender $sender, string $commandLabel, array $args){
+		if($sender instanceof Player){
+      $sender->sendMessage("comming soon.");
+		return true;
+    }
+	}
 }
-
-/*	public function onCommand(CommandSender $sender, Command $command, string $label, array $args);
-
-}*/

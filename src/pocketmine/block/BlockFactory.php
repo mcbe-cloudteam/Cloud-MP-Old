@@ -64,27 +64,67 @@ class BlockFactory{
 		self::$transparent = new \SplFixedArray(16384);
 		self::$diffusesSkyLight = new \SplFixedArray(16384);
 		self::$blastResistance = new \SplFixedArray(16384);
-		
+
 		/* 새로운 블럭 추가 */
 		self::registerBlock(new HardGlass(253, 0, "Hard Glass"));
 		self::registerBlock(new HardGlassPane(190, 0, "Hard Glass Pane"));
-		
+
 		self::registerBlock(new ChemicalHeat(192, 0, "Chemical Heat"));
 		self::registerBlock(new ChemicalTable(238, 0, "Chemical Table"));
-		
+
 		self::registerBlock(new ColoredTorchRg(202, 0, "Colored Torch Rg"));
-		
+
 		self::registerBlock(new ColoredTorchBp(204, 0, "Colored Torch Bp"));
-		
+
 		self::registerBlock(new UnderWaterTorch());
-		
+
 		self::registerBlock(new HardStainedGlass(254, 0, "Hard Stained Glass"));
 		self::registerBlock(new HardStainedGlassPane(191, 0, "Hard Stained Glass Pane"));
-		
+
 		self::registerBlock(new NewBlock(266, 0, "Blue Ice"));
 		self::registerBlock(new NewBlock(267, 0, "H"));
+
+		self::registerBlock(new NewBlock(393, 0, "Kelp"));
+		self::registerBlock(new NewBlock(392, 0, "CORAL_FAN_HANG3"));
+		self::registerBlock(new NewBlock(391, 0, "CORAL_FAN_HANG2"));
+		self::registerBlock(new NewBlock(390, 0, "CORAL_FAN_HANG1"));
+		self::registerBlock(new NewBlock(389, 0, "CORAL_FAN_HANG"));
+		self::registerBlock(new NewBlock(388, 0, "CORAL_FAN"));
+		self::registerBlock(new NewBlock(387, 0, "CORAL_BLOCK"));
+		self::registerBlock(new NewBlock(386, 0, "CORAL"));
+		self::registerBlock(new NewBlock(385, 0, "SEAGRASS"));
+		self::registerBlock(new NewBlock(411, 0, "SEA_PICKLE"));
+		self::registerBlock(new NewBlock(412, 0, "CONDUIT"));
+		self::registerBlock(new NewBlock(413, 0, "TURTLE_EGG"));
+		self::registerBlock(new NewBlock(418, 0, "BAMBOO"));
+		self::registerBlock(new NewBlock(419, 0, "BAMBOO_SAPLING"));
+		self::registerBlock(new NewBlock(420, 0, "SCAFFOLDING"));
+
+				self::registerBlock(new NewBlock(461, 0, "BELL_BLOCK"));
+						self::registerBlock(new NewBlock(464, 0, "CAMPFIRE_BLOCK"));
+										self::registerBlock(new NewBlock(455, 0, "CARTOGRAPHY_TABLE_BLOCK"));
+										self::registerBlock(new NewBlock(456, 0, "FLETCHING_TABLE_BLOCK"));
+										self::registerBlock(new NewBlock(457, 0, "SMITHING_TABLE_BLOCK"));
+										self::registerBlock(new NewBlock(451, 0, "BLAST_FURNACE_BLOCK"));
+										self::registerBlock(new NewBlock(452, 0, "STONECUTTER_BLOCK"));
+										self::registerBlock(new NewBlock(453, 0, "SMOKER_BLOCK"));
+										self::registerBlock(new NewBlock(450, 0, "GRINDSTONE_BLOCK"));
+										self::registerBlock(new NewBlock(462, 0, "SWEET_BERRY_BUSH"));
+
+
+		self::registerBlock(new Barrel()); /* 458 */
+		self::registerBlock(new Loom()); /* 459 */
+
+		self::registerBlock(new NewBlock(260, 0, "Stripped Spruce Log"));
+		self::registerBlock(new NewBlock(261, 0, "Stripped Birch Log"));
+		self::registerBlock(new NewBlock(262, 0, "Stripped Jungle Log"));
+		self::registerBlock(new NewBlock(263, 0, "Stripped Acaica Log"));
+		self::registerBlock(new NewBlock(264, 0, "Stripped Dark Oak Log"));
+		self::registerBlock(new NewBlock(265, 0, "Stripped Oak Log"));
+
+
 		/* 새로운 블럭 추가 */
-		
+
 		self::registerBlock(new Air());
 		self::registerBlock(new Stone());
 		self::registerBlock(new Grass());

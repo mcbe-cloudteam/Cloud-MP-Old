@@ -26,7 +26,7 @@ namespace pocketmine\item;
 use pocketmine\block\BlockIds;
 
 interface ItemIds extends BlockIds{
-	
+
 	public const COMPOSTER_I = -213;
 	public const WOOD_2_I = -212;
 	public const JIGSAW_I = -211;
@@ -108,7 +108,7 @@ interface ItemIds extends BlockIds{
 	public const CORAL_BLOCK_I = -132;
 	public const CORAL_I = -131;
 	public const SEAGRASS_I = -130;
-	
+
 	public const ELEMENT_I_118 = -129;
 	public const ELEMENT_I_117 = -128;
 	public const ELEMENT_I_116 = -127;
