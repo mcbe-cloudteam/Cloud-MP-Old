@@ -60,6 +60,9 @@ use pocketmine\command\defaults\TellCommand;
 use pocketmine\command\defaults\TimeCommand;
 use pocketmine\command\defaults\TimingsCommand;
 use pocketmine\command\defaults\TitleCommand;
+use pocketmine\command\defaults\PlaySoundCommand;
+use pocketmine\command\defaults\ClearCommand;
+use pocketmine\command\defaults\WorldCommand;
 use pocketmine\command\defaults\TransferServerCommand;
 use pocketmine\command\defaults\VanillaCommand;
 use pocketmine\command\defaults\VersionCommand;
@@ -105,6 +108,7 @@ class SimpleCommandMap implements CommandMap{
 			new EffectCommand("effect"),
 			new EnchantCommand("enchant"),
 			new GamemodeCommand("gamemode"),
+			new GamemodeCommand("gm"),
 			new GarbageCollectorCommand("gc"),
 			new GiveCommand("give"),
 			new HelpCommand("help"),
@@ -135,6 +139,10 @@ class SimpleCommandMap implements CommandMap{
 			new TransferServerCommand("transferserver"),
 			new VersionCommand("version"),
 			new StoreCommand("store"),
+			new ClearCommand("clear"),
+			new PlaySoundCommand("ps"),
+			new PlaySoundCommand("playsound"),
+			new WorldCommand("world"),
 			new WhitelistCommand("whitelist")
 		]);
 	}
