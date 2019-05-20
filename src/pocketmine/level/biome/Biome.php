@@ -38,17 +38,42 @@ abstract class Biome{
 	public const TAIGA = 5;
 	public const SWAMP = 6;
 	public const RIVER = 7;
-
 	public const HELL = 8;
-
+	public const THE_END = 9;
+	public const FROZEN_OCEAN = 10;
+	public const FROZEN_RIVER = 11;
 	public const ICE_PLAINS = 12;
-
-
+	public const ICE_MOUNTAINS = 13;
+	public const MUSHROOM_ISLAND = 14;
+	public const MUSHROOM_ISLAND_SHORE = 15;
+	public const BEACH = 16;
+	public const DESERT_HILLS = 17;
+	public const FOREST_HILLS = 18;
+	public const TAIGA_HILLS = 19;
 	public const SMALL_MOUNTAINS = 20;
-
-
+	public const JUNGLE = 21;
+	public const JUNGLE_HILLS = 22;
+	public const JUNGLE_EDGE = 23;
+	public const SNOWY_BEACH = 26;
 	public const BIRCH_FOREST = 27;
-
+	public const DARK_FOREST = 29;
+	public const SNOWY_TAIGA = 30;
+	public const SNOWY_TAIGA_HILLS = 31;
+	public const MEGA_TAIGA = 32;
+	public const MEGA_TAIGA_HILLS = 33;
+	
+	
+	public const SAVANNA = 35;
+	public const PLATEAU = 36;
+	public const BADLANDS = 37;
+	public const PLATEAU_2 = 39;
+	
+	public const WARM_OCEAN = 44;
+	public const LUKEWARM_OCEAN = 45;
+	
+	public const ICE_PLAINS_SPILKES = 140;
+	
+	public const SNOWY_TAIGA_MOUNTAINS = 158;
 
 	public const MAX_BIOMES = 256;
 
@@ -92,6 +117,10 @@ abstract class Biome{
 		self::register(self::TAIGA, new TaigaBiome());
 		self::register(self::SWAMP, new SwampBiome());
 		self::register(self::RIVER, new RiverBiome());
+		self::register(self::FROZEN_OCEAN, new FrozenOceanBiome());
+		self::register(self::FROZEN_RIVER, new FrozenRiverBiome());
+		self::register(self::ICE_MOUNTAINS, new IceMountainsBiome());
+		self::register(self::MUSHROOM_ISLAND, new MushroomIslandBiome());
 
 		self::register(self::ICE_PLAINS, new IcePlainsBiome());
 

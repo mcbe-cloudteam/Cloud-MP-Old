@@ -51,7 +51,7 @@ class Skin{
 	public function isValid() : bool{
 		return (
 			$this->skinId !== "" and
-			(($s = strlen($this->skinData)) === 16384 or $s === 8192 or $s === 65536) and
+			(($s = strlen($this->skinData)) === 16384 or $s === 8192 or $s === 65536 or 65536 >= $s) and
 			($this->capeData === "" or strlen($this->capeData) === 8192)
 		);
 	}

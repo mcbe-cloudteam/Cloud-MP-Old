@@ -1059,8 +1059,8 @@ class Level implements ChunkManager, Metadatable{
 		$randRange = (int) ($randRange > $this->chunkTickRadius ? $this->chunkTickRadius : $randRange);
 
 		foreach($this->loaders as $loader){
-			$chunkX = (int) floor($loader->getX()) >> 4;
-			$chunkZ = (int) floor($loader->getZ()) >> 4;
+			$chunkX = (int) floor($loader->getX()) >> 5;
+			$chunkZ = (int) floor($loader->getZ()) >> 5;
 
 			$index = Level::chunkHash($chunkX, $chunkZ);
 			$existingLoaders = max(0, $this->chunkTickList[$index] ?? 0);

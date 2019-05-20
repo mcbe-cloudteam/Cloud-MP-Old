@@ -24,6 +24,8 @@ declare(strict_types=1);
 namespace pocketmine\level\biome;
 
 use pocketmine\level\generator\populator\TallGrass;
+use pocketmine\level\generator\populator\Tree;
+use pocketmine\block\Sapling;
 
 class IcePlainsBiome extends SnowyBiome{
 
@@ -32,10 +34,13 @@ class IcePlainsBiome extends SnowyBiome{
 
 		$tallGrass = new TallGrass();
 		$tallGrass->setBaseAmount(5);
+		
+		$trees = new Tree(Sapling::BIRCH);
+		$trees->setBaseAmount(5);
 
 		$this->addPopulator($tallGrass);
 
-		$this->setElevation(63, 74);
+		$this->setElevation(63, 124);
 
 		$this->temperature = 0.05;
 		$this->rainfall = 0.8;

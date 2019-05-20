@@ -17,6 +17,7 @@ namespace pocketmine\entity;
 
 use pocketmine\item\Item;
 use pocketmine\item\ItemFactory;
+use pocketmine\Player;
 use function mt_rand;
 
 class Ravager extends Monster{
@@ -43,5 +44,9 @@ class Ravager extends Monster{
 
 	public function getXpDropAmount() : int{
 		return 100;
+	}
+	
+	public function ridingRavager(Player $player){
+		$this->setGenericFlag(DATA_FLAG_RIDING, $player);
 	}
 }

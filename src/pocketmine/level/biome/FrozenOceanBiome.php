@@ -25,23 +25,23 @@ namespace pocketmine\level\biome;
 
 use pocketmine\level\generator\populator\TallGrass;
 
-class PlainBiome extends GrassyBiome{
+class FrozenOceanBiome extends SnowyBiome{
 
 	public function __construct(){
 		parent::__construct();
 
 		$tallGrass = new TallGrass();
-		$tallGrass->setBaseAmount(12);
+		$tallGrass->setBaseAmount(10);
 
 		$this->addPopulator($tallGrass);
 
-		$this->setElevation(63, 98);
+		$this->setElevation(65, 68);
 
-		$this->temperature = 0.8;
-		$this->rainfall = 0.4;
+		$this->temperature = 0.05;
+		$this->rainfall = 0.8;
 	}
 
 	public function getName() : string{
-		return "Plains";
+		return "Frozen Ocean";
 	}
 }

@@ -31,24 +31,51 @@ class ForestBiome extends GrassyBiome{
 
 	public const TYPE_NORMAL = 0;
 	public const TYPE_BIRCH = 1;
+	public const TYPE_ACACIA = 2;
+	public const TYPE_JUNGLE = 3;
+	public const TYPE_VILLAGER = 4;
 
 	public $type;
 
 	public function __construct(int $type = self::TYPE_NORMAL){
 		parent::__construct();
 
-		$this->type = $type;
-
-		$trees = new Tree($type === self::TYPE_BIRCH ? Sapling::BIRCH : Sapling::OAK);
-		$trees->setBaseAmount(5);
+		$this->type = mt_rand(0, 4);
+		
+		$this->setElevation(63, 78);
+		
+		if ($type === 0) {
+			$trees = new Tree(Sapling::OAK);
+			$trees->setBaseAmount(5);
+		}
+		
+		if ($type === 1) {
+			$trees = new Tree(Sapling::BIRCH);
+			$trees->setBaseAmount(5);
+		}
+		
+		if ($type === 2) {
+			$trees = new Tree(Sapling::ACACIA);
+			$trees->setBaseAmount(7);
+		}
+		
+		if ($type === 3) {
+			$trees = new Tree(Sapling::JUNGLE);
+			$trees->setBaseAmount(10);
+		}
+		
+		if ($type === 4) {
+			$trees = new Tree(Sapling::OAK);
+			$trees->setBaseAmount(2);
+			$this->setElevation(53, 54);
+		}
+		
 		$this->addPopulator($trees);
 
 		$tallGrass = new TallGrass();
 		$tallGrass->setBaseAmount(3);
 
 		$this->addPopulator($tallGrass);
-
-		$this->setElevation(63, 81);
 
 		if($type === self::TYPE_BIRCH){
 			$this->temperature = 0.6;

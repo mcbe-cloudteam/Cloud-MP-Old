@@ -64,11 +64,11 @@ abstract class Tree{
 				return; //TODO
 			default:
 				$tree = new OakTree();
-				/*if($random->nextRange(0, 9) === 0){
+				if($random->nextRange(0, 9) === 0){
 					$tree = new BigTree();
-				}else{*/
+				}else{
 
-				//}
+				}
 				break;
 		}
 		if($tree->canPlaceObject($level, $x, $y, $z, $random)){

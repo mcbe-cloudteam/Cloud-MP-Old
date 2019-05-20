@@ -24,24 +24,39 @@ declare(strict_types=1);
 namespace pocketmine\level\biome;
 
 use pocketmine\level\generator\populator\TallGrass;
+use pocketmine\block\BlockFactory;
+use pocketmine\block\Block;
 
-class PlainBiome extends GrassyBiome{
+class FrozenRiverBiome extends SnowyBiome{
 
 	public function __construct(){
 		parent::__construct();
 
+		$this->setGroundCover([
+			BlockFactory::get(Block::WATER),
+			BlockFactory::get(Block::WATER),
+			BlockFactory::get(Block::WATER),
+			BlockFactory::get(Block::WATER),
+			BlockFactory::get(Block::WATER),
+			BlockFactory::get(Block::DIRT),
+			BlockFactory::get(Block::DIRT),
+			BlockFactory::get(Block::DIRT),
+			BlockFactory::get(Block::DIRT),
+			BlockFactory::get(Block::DIRT)
+		]);
+		
 		$tallGrass = new TallGrass();
-		$tallGrass->setBaseAmount(12);
-
+		$tallGrass->setBaseAmount(1);
+		
 		$this->addPopulator($tallGrass);
 
-		$this->setElevation(63, 98);
+		$this->setElevation(54, 62);
 
-		$this->temperature = 0.8;
-		$this->rainfall = 0.4;
+		$this->temperature = 0;
+		$this->rainfall = 0.8;
 	}
 
 	public function getName() : string{
-		return "Plains";
+		return "Frozen River";
 	}
 }

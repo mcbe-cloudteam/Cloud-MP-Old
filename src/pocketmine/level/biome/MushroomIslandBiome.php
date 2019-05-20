@@ -24,24 +24,29 @@ declare(strict_types=1);
 namespace pocketmine\level\biome;
 
 use pocketmine\level\generator\populator\TallGrass;
+use pocketmine\block\Sapling;
+use pocketmine\level\generator\populator\Tree;
 
-class PlainBiome extends GrassyBiome{
+class MushroomIslandBiome extends MushroomBiome{
 
 	public function __construct(){
 		parent::__construct();
 
 		$tallGrass = new TallGrass();
-		$tallGrass->setBaseAmount(12);
+		$tallGrass->setBaseAmount(3);
 
 		$this->addPopulator($tallGrass);
+		
+		$trees = new Tree(Sapling::OAK);
+		$trees->setBaseAmount(2);
+		
+		$this->setElevation(46, 58);
 
-		$this->setElevation(63, 98);
-
-		$this->temperature = 0.8;
-		$this->rainfall = 0.4;
+		$this->temperature = 0.78;
+		$this->rainfall = 0.6;
 	}
 
 	public function getName() : string{
-		return "Plains";
+		return "Mushroom Island";
 	}
 }

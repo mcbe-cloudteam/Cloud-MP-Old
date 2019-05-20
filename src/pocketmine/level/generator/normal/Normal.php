@@ -46,6 +46,8 @@ class Normal extends Generator{
 	private $populators = [];
 	/** @var int */
 	private $waterHeight = 62;
+	private $waterKelp = 62;
+	private $waterBlock = 62;
 
 	/** @var Populator[] */
 	private $generationPopulators = [];
@@ -56,7 +58,7 @@ class Normal extends Generator{
 	private $selector;
 
 	private static $GAUSSIAN_KERNEL = null;
-	private static $SMOOTH_SIZE = 2;
+	private static $SMOOTH_SIZE = 5;
 
 	/**
 	 * @param array $options
@@ -95,7 +97,7 @@ class Normal extends Generator{
 	}
 
 	private function pickBiome(int $x, int $z) : Biome{
-		$hash = $x * 2345803 ^ $z * 9236449 ^ $this->level->getSeed();
+		$hash = $x * (int) mt_rand(1, 2345803) ^ $z * (int) mt_rand(1, 9236449) ^ $this->level->getSeed();
 		$hash *= $hash + 223;
 		$xNoise = $hash >> 20 & 3;
 		$zNoise = $hash >> 22 & 3;
@@ -146,6 +148,8 @@ class Normal extends Generator{
 					//that mountain biomes are supposed to be pretty cold.
 					if($rainfall < 0.25){
 						return Biome::MOUNTAINS;
+					}elseif($temperature < 0.32){
+						return Biome::MUSHROOM_ISLAND;
 					}elseif($rainfall < 0.70){
 						return Biome::SMALL_MOUNTAINS;
 					}else{
@@ -242,17 +246,24 @@ class Normal extends Generator{
 	}
 
 	public function populateChunk(int $chunkX, int $chunkZ) : void{
-		$this->random->setSeed(0xdeadbeef ^ ($chunkX << 8) ^ $chunkZ ^ $this->level->getSeed());
+		$this->random->setSeed(mt_rand(0, PHP_INT_MAX) ^ $chunkZ ^ $this->level->getSeed());
 		foreach($this->populators as $populator){
 			$populator->populate($this->level, $chunkX, $chunkZ, $this->random);
 		}
 
 		$chunk = $this->level->getChunk($chunkX, $chunkZ);
-		$biome = Biome::getBiome($chunk->getBiomeId(7, 7));
+		$Id = mt_rand(1, 14);
+		if ($Id == 8){
+			$Id = mt_rand(10, 14);
+		}
+		if ($Id == 9){
+			$Id = mt_rand(1, 7);
+		}
+		$biome = Biome::getBiome($chunk->getBiomeId($Id, $Id));
 		$biome->populateChunk($this->level, $chunkX, $chunkZ, $this->random);
 	}
 
 	public function getSpawn() : Vector3{
-		return new Vector3(127.5, 128, 127.5);
+		return new Vector3(mt_rand(0, 1234567), 128, mt_rand(0, 1234567));
 	}
 }
