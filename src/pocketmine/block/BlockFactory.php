@@ -84,7 +84,7 @@ class BlockFactory{
 		self::registerBlock(new NewBlock(266, 0, "Blue Ice"));
 		self::registerBlock(new NewBlock(267, 0, "H"));
 
-		self::registerBlock(new NewBlock(393, 0, "Kelp"));
+		self::registerBlock(new Kelp());
 		self::registerBlock(new NewBlock(392, 0, "CORAL_FAN_HANG3"));
 		self::registerBlock(new NewBlock(391, 0, "CORAL_FAN_HANG2"));
 		self::registerBlock(new NewBlock(390, 0, "CORAL_FAN_HANG1"));

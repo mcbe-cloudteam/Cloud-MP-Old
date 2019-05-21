@@ -19,7 +19,7 @@
  use pocketmine\Player;
  class Kelp extends Solid{
 
- 	protected $id = self::KELP;
+ 	protected $id = 393;
  	public function __construct(int $meta = 0){
  		$this->meta = $meta;
  	}
@@ -29,10 +29,12 @@
  	public function getName() : string{
  		return "Kelp";
  	}
- 	public function place(Item $item, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, Player $player = null) : bool{
- 		$this->meta = PillarRotationHelper::getMetaFromFace($this->meta, $face);
- 		return $this->getLevel()->setBlock($blockReplace, $this, true, true);
- 	}
+
+  public function place(Item $item, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, Player $player = null) : bool{
+				$this->getLevel()->setBlock($this, $this, true);
+        return true;
+	}
+
  	public function getVariantBitmask() : int{
  		return 0x03;
  	}

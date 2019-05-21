@@ -42,6 +42,7 @@ use pocketmine\entity\projectile\EnderPearl;
 use pocketmine\entity\projectile\ExperienceBottle;
 use pocketmine\entity\projectile\Snowball;
 use pocketmine\entity\projectile\SplashPotion;
+use pocketmine\entity\projectile\ThrownTrident;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDespawnEvent;
 use pocketmine\event\entity\EntityLevelChangeEvent;
@@ -338,7 +339,7 @@ abstract class Entity extends Location implements Metadatable, EntityIds{
 		Entity::registerEntity(SplashPotion::class, false, ['ThrownPotion', 'minecraft:potion', 'thrownpotion']);
 		Entity::registerEntity(Squid::class, false, ['Squid', 'minecraft:squid']);
 		Entity::registerEntity(Villager::class, false, ['Villager', 'minecraft:villager']);
-		
+
 		/* Entity::registerEntity(Creeper::class, true, ['Creeper', 'minecraft:creeper']);
 		Entity::registerEntity(ElderGuardian::class, true, ['ElderGuardian', 'minecraft:elderguardian']);
 		Entity::registerEntity(EnderDragon::class, true, ['EnderDragon', 'minecraft:enderdragon']);
@@ -364,9 +365,10 @@ abstract class Entity extends Location implements Metadatable, EntityIds{
 		Entity::registerEntity(SalmonFish::class, false, ['SalmonFish',	'minecraft:salmonfish']);
 		Entity::registerEntity(PufferFish::class, false, ['PufferFish',	'minecraft:pufferfish']);
 		Entity::registerEntity(Turtle::class, false, ['Turtle', 'minecraft:turtle']);
-		
-		
+
+
 		Entity::registerEntity(FireworksRocket::class, false, ['FireworksRocket', 'minecraft:fireworks_rocket']);
+		Entity::registerEntity(ThrownTrident::class, false, ['ThrownTrident', 'minecraft:thrown_trident']);
 
 		Entity::registerEntity(Human::class, true);
 
@@ -791,23 +793,23 @@ abstract class Entity extends Location implements Metadatable, EntityIds{
 			$attr->setValue($value ? ($attr->getValue() * 1.3) : ($attr->getValue() / 1.3), false, true);
 		}
 	}
-	
+
 	public function isSwimming() : bool{
 		return $this->getGenericFlag(self::DATA_FLAG_SWIMMING);
 	}
-	
+
 	public function setSwimming(bool $value = true) : void{
 		$this->setGenericFlag(self::DATA_FLAG_SWIMMING, $value);
 	}
-	
+
 	public function setDead(bool $value = true) : void{
 		$this->setGenericFlag(self::DATA_FLAG_DEAD, $value);
 	}
-	
+
 	public function setSleeping(bool $value = true) : void{
 		$this->setGenericFlag(self::DATA_FLAG_SLEEPING, $value);
 	}
-	
+
 	public function isImmobile() : bool{
 		return $this->getGenericFlag(self::DATA_FLAG_IMMOBILE);
 	}
